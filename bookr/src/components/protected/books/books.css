@@ -1,0 +1,64 @@
+.booklist {
+    display:flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.bookcard {
+    margin: 10px;
+    width:100%;
+}
+
+.bookcard a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+
+.bookcard .dv-star-rating {
+    font-size: 1.5rem;
+}
+
+.bookpage_full {
+    width:100%;
+    max-width:980px;
+    margin: 0 auto;
+}
+
+.bookpage_full .star_rating { 
+    float:right;
+    font-size:1.5rem;
+    margin-top:10px;
+}
+
+.bookpage_img_wrapper {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-left: -60px;
+    display: inline-block;
+}
+
+.bookpage_img_wrapper img {
+    width: 100%;
+    box-shadow: 2px 2px 10px #00000080;
+}
+
+.bookpage_desc_wrapper {
+    display: inline-block;
+    max-width: 600px;
+    width: 100%;
+    vertical-align: top;
+    padding-top: 30px;
+    margin-left: 50px;
+}
+
+.bookpage_reviews_wrapper {
+    width:100%;
+    max-width: 700px;
+}
+
+.addReviewButton {
+    padding:15px;
+    font-size:1.5rem;
+}
