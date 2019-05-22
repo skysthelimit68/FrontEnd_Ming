@@ -27,7 +27,10 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 signingUp : true, 
-                error : ''
+                error : '',
+                token: "",
+                member: "",
+                member_id: ""
             }
         case SIGNUP_SUCCESS:
             console.log(action.username, action.token)
@@ -52,6 +55,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 logginIn : true,
                 error : "",
+                token: "",
+                member: "",
+                member_id: ""
+
             }
         case LOGIN_SUCCESS:
             console.log("from reducer: " , action.user_id, action.username)
