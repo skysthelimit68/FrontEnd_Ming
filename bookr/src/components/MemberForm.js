@@ -33,9 +33,9 @@ class MemberForm extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            name: "",
+            //name: "",
             username: "",
-            email: "",
+            //email: "",
             password: "",
             newUser: false       
         }
@@ -57,9 +57,9 @@ class MemberForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         const userInfo = {
-            name: this.state.name,
+            //name: this.state.name,
             username : this.state.username,
-            email : this.state.email,
+            //email : this.state.email,
             password: this.state.password
         }
         const creds = {
@@ -80,17 +80,7 @@ class MemberForm extends React.Component {
 
         return(
             <form onSubmit={this.handleSubmit} className={classes.container} noValidate autoComplete="off">
-                {this.state.newUser ? <TextField
-                    label="Name"
-                    className={`${classes.textField} form_input`}
-                    type="text"
-                    name="name"
-                    value={this.state.name}
-                    onChange={this.updateField}
-                    autoComplete="name"
-                    margin="normal"
-                    variant="outlined"
-                /> : null}
+                
                 <TextField
                     label="User Name"
                     className={`${classes.textField} form_input`}
@@ -102,18 +92,7 @@ class MemberForm extends React.Component {
                     margin="normal"
                     variant="outlined"
                 />
-                {this.state.newUser ? <TextField
-                    label="Email"
-                    className={`${classes.textField} form_input`}
-                    type="email"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.updateField}
-                    autoComplete="email"
-                    margin="normal"
-                    variant="outlined"
-                /> : null
-                }
+                
                 <TextField
                     label="Password"
                     className={`${classes.textField} form_input`}
@@ -136,3 +115,30 @@ class MemberForm extends React.Component {
 }
 
 export default withStyles(styles)(MemberForm);
+
+/*
+{this.state.newUser ? <TextField
+                    label="Name"
+                    className={`${classes.textField} form_input`}
+                    type="text"
+                    name="name"
+                    value={this.state.name}
+                    onChange={this.updateField}
+                    autoComplete="name"
+                    margin="normal"
+                    variant="outlined"
+                /> : null}
+{this.state.newUser ? <TextField
+                    label="Email"
+                    className={`${classes.textField} form_input`}
+                    type="email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.updateField}
+                    autoComplete="email"
+                    margin="normal"
+                    variant="outlined"
+                /> : null
+                }
+                
+                */

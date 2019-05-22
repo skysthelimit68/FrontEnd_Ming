@@ -8,14 +8,15 @@ export const signUp = newUser => dispatch => {
     dispatch({type : SIGNUP_START});
     return (
         axios
-        .post("http://localhost:5000/api/signup", newUser)
+        //.post("http://localhost:5000/api/signup", newUser)
+        .post("http://localhost:3500/api/auth/register", newUser)
         .then( res => {
-            dispatch({type:SIGNUP_SUCCESS, payload: res.data.users, token: res.data.token})
+            dispatch({type:SIGNUP_SUCCESS, token: res.data.token, username: res.data.username, user_id: res.data.id})
             localStorage.setItem("token", res.data.token)
             console.log(res)
         })
         .catch( err => {
-            dispatch({type:SIGNUP_FAIL, payload: err.response.data.msg})
+            dispatch({type:SIGNUP_FAIL, payload: err})
             console.log(err)
         })
     )
@@ -29,11 +30,12 @@ export const login = creds => dispatch => {
     dispatch({ type : LOGIN_START })
     return (
         axios
-        .post("http://localhost:5000/api/login", creds)
+        //.post("http://localhost:5000/api/login", creds)
+        .post("http://localhost:3500/api/auth/login", creds)
         .then(res => {
-            dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload })
-            console.log(res.data.payload)
-            localStorage.setItem("token", res.data.payload)
+            dispatch({ type: LOGIN_SUCCESS, token: res.data.token, username: res.data.username, user_id: res.data.id })
+            console.log("user ID from logging in  :" , res.data.id)
+            localStorage.setItem("token", res.data.token)
         })
         .catch(err => {
             dispatch({ type: LOGIN_FAIL, payload: err})
