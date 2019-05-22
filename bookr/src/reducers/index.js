@@ -29,8 +29,8 @@ const reducer = (state = initialState, action) => {
                 signingUp : true, 
                 error : '',
                 token: "",
-                member: "",
-                member_id: ""
+                //member: "",
+                //member_id: ""
             }
         case SIGNUP_SUCCESS:
             console.log(action.username, action.token)
@@ -56,8 +56,8 @@ const reducer = (state = initialState, action) => {
                 logginIn : true,
                 error : "",
                 token: "",
-                member: "",
-                member_id: ""
+                //member: "",
+                //member_id: ""
 
             }
         case LOGIN_SUCCESS:

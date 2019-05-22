@@ -36,11 +36,15 @@ class ReviewForm extends React.Component {
             rating: this.state.rating,
             comment: this.state.comment,
             book_id: this.props.activeBook.id,
-            user_id: this.props.member_id,
+            user_id: localStorage.getItem("user_id"),
         }
         this.props.postReview(newReview)
-        window.location.reload();
         //this.props.fetchBookWithNewReview(this.props.activeBook.id)
+        .then(() => {
+            setTimeout( () => {window.location.reload()}, 500)
+        });
+        
+        
 
         this.handleClose();
         this.setState({
@@ -67,7 +71,6 @@ class ReviewForm extends React.Component {
 
     render() {
         const { rating } = this.state;
-        if(!this.props.member_id) return <div>loading form...</div>
         return(
             <div>
                  <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
