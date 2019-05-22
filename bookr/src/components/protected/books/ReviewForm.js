@@ -39,9 +39,11 @@ class ReviewForm extends React.Component {
             user_id: localStorage.getItem("user_id"),
         }
         this.props.postReview(newReview)
-        //this.props.fetchBookWithNewReview(this.props.activeBook.id)
+        //this.props.fetchBookWithNewReview(this.props.activeBook.id)      
+        
         .then(() => {
-            setTimeout( () => {window.location.reload()}, 500)
+            //setTimeout( () => {window.location.reload()}, 500)
+            this.props.fetchBookWithNewReview(this.props.activeBook.id)
         });
         
         
