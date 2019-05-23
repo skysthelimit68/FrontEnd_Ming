@@ -1,12 +1,12 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import PrivateRoute from "./PrivateRoute";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import MemberHome from "./components/protected/MemberHome";
 import FeaturedBook from "./components/featured/FeaturedBook";
-import MemberAvatar from "./components/protected/member/MemberAvatar";
-import logo from './logo.png';
+
+import Header from './components/Header';
 
 import './App.css';
 
@@ -20,7 +20,23 @@ class App extends React.Component {
   render() {
     return (
      <div className="app">
-       <header>
+       <Header logout={this.logout}/>
+       <Route exact path="/" component={Login} />
+       <Route path="/login" component={Login}/>
+       <Route path="/signup" component={Signup}/>
+       <PrivateRoute path="/member-area" component={MemberHome} />
+       <Route path="/featured-books/:id" component={FeaturedBook} />
+     </div>
+  );
+  }
+  
+}
+
+export default App;
+
+
+/*
+<header>
          <div className="header-wrapper">
          <Link to="/member-area">
           <div className="logo-wrapper">
@@ -36,16 +52,4 @@ class App extends React.Component {
       
         </div>
        </header>
-       <Route path="/login" component={Login}/>
-       <Route path="/signup" component={Signup}/>
-       <PrivateRoute path="/member-area" component={MemberHome} />
-       <Route path="/featured-books/:id" component={FeaturedBook} />
-     </div>
-  );
-  }
-  
-}
-
-export default App;
-
-
+       */

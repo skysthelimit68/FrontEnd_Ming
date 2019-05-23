@@ -5,6 +5,7 @@ import Avatar from '@material-ui/core/Avatar';
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import deepPurple from '@material-ui/core/colors/deepPurple';
 import Grid from '@material-ui/core/Grid';
+import "./member.css";
 
 const styles = {
   avatar: {
@@ -17,17 +18,20 @@ const styles = {
   },
   blueAvatar: {
     margin: 10,
-    color: '#fff',
-    backgroundColor: '#028090',
+    color: '#028090',
+    backgroundColor: "#f5f5f5" ,
   },
 };
 
-function MemberAvatar(props) {
+const MemberAvatar = props => {
+  const handleAvatar = event => {
+    props.logout(event);
+  }
   const { classes } = props;
   return (
-    <Grid container justify="center" alignItems="center">
+    <Grid container justify="center" alignItems="center" className="avatar-wrapper">
       
-      <Avatar className={classes.blueAvatar}>M</Avatar>
+      <Avatar className={`${classes.blueAvatar} avatar-style`} onClick={handleAvatar}>{localStorage.getItem("username")[0].toUpperCase()}</Avatar>
     </Grid>
   );
 }
