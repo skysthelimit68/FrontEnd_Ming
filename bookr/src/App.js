@@ -27,7 +27,6 @@ class App extends React.Component {
        <Route path="/signup" component={Signup}/>
        <PrivateRoute path="/member-area" component={MemberHome} />
        <Route path="/featured-books/:id" component={FeaturedBook} />
-       <Footer />
      </div>
   );
   }

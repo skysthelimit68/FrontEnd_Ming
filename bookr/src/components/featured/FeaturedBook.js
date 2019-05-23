@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import FeaturedBookDetail from './FeaturedBookDetail';
 import FeaturedBookSideInfo from './FeaturedBookSideInfo';
 import FeaturedForm from './FeaturedForm';
-import { login , signUp } from '../../actions';
+import { login , signUp, fetchBook } from '../../actions';
 import { connect } from "react-redux";
 
 
@@ -28,6 +28,11 @@ class FeaturedBook extends React.Component {
         }
     }
 
+    componentDidMount(){
+        if(localStorage.getItem("token")) this.props.history.push(`/member-area/book/${this.state.id}`)
+        this.props.fetchBook(this.state.id);
+    }
+
     handleSignup = newUser => {
         this.props.signUp(newUser)
         .then(() => this.props.history.push('/member-area'))
@@ -40,7 +45,12 @@ class FeaturedBook extends React.Component {
 
     render() {
         const { classes } = this.props;
-
+        if(!this.props.activeBook.featured) return   (
+              <div className="container"> 
+                <h2>You need to sing in to view this book</h2>
+              </div>
+        )        
+       
         return (
             <div className="container">
                 <Paper className={`${classes.root} bookpage_full`}elevation={1}>
@@ -50,7 +60,6 @@ class FeaturedBook extends React.Component {
                         <FeaturedBookSideInfo id={this.state.id} />
 
                      </div>
-
                 </Paper>
            </div>
         )
@@ -58,11 +67,15 @@ class FeaturedBook extends React.Component {
 }
 
 
-
+const mapStateToProps = state => ({
+    activeBook : state.activeBook
+})
 
 export default compose(
     withStyles(styles, { name: 'FeaturedBook' }),
-    connect(null, {login, signUp})
+    connect(
+        mapStateToProps, 
+        {login, signUp, fetchBook})
   )(FeaturedBook)
 
 //export default withStyles(styles)(FeaturedBook);
