@@ -1,9 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchBook } from "../../actions";
-//import BookSubjects from "./BookSubjects";
-//import BookInfo from "./BookInfo";
-//import AdditionalBooks from "./AdditionalBooks";
+import BookSubjects from "../protected/books/BookSubjects";
+import BookInfo from "../protected/books/BookInfo";
 
 class FeaturedBookSideInfo extends React.Component {
     constructor(props) {
@@ -21,16 +20,14 @@ class FeaturedBookSideInfo extends React.Component {
      if(!this.props.activeBook.subjects) return <div>Loading Additional Book Info...</div>
         return ( 
             
-            <div></div>
             
-            /*
+            
             <div>
                 <BookSubjects subjects={this.props.activeBook.subjects} />
                 <BookInfo book={this.props.activeBook} />
-                <h2>Top Rated Books: </h2>
-                <AdditionalBooks />
+                <h2>Featured Books</h2>
             </div>
-           */
+           
         )
 
     }

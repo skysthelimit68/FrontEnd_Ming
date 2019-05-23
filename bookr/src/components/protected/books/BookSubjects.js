@@ -2,15 +2,60 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchBook } from "../../../actions";
 
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Chip from '@material-ui/core/Chip';
+
+
+const styles = theme => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    chip: {
+      margin: theme.spacing.unit,
+    },
+  });
+
 const BookSubjects = props => {
+    const { classes } = props;
+
     return (
-        <div>
-            {props.subjects.map(subject => <span key={subject.id}>{subject.name}{' '}</span>)}
+
+        <div className={classes.root}>
+
+            {props.subjects.map(subject => 
+            <Chip
+                label={subject.name}
+                className={classes.chip}
+                component="a"
+                href="#"
+                color="primary"
+                clickable
+            />
+        )}    
+         
         </div>
+
+  
     )
 }
 
-export default BookSubjects;
+BookSubjects.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
+export default withStyles(styles)(BookSubjects);
+
+
+
+
+
+
+
+
+
+
 
 /*
 class BookSubjects extends React.Component {

@@ -46,8 +46,9 @@ class FeaturedBook extends React.Component {
                 <Paper className={`${classes.root} bookpage_full`}elevation={1}>
                      <FeaturedBookDetail id={this.state.id} />
                      <div className="bookpage_right_wrapper">
-                        <FeaturedBookSideInfo id={this.state.id} />
                         <FeaturedForm login={this.handleLogin} signup={this.handleSignup}/>
+                        <FeaturedBookSideInfo id={this.state.id} />
+
                      </div>
 
                 </Paper>
