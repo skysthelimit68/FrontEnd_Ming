@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import MemberHome from "./components/protected/MemberHome";
 import FeaturedBook from "./components/featured/FeaturedBook";
+import Footer from "./components/Footer";
 
 import Header from './components/Header';
 
@@ -26,6 +27,7 @@ class App extends React.Component {
        <Route path="/signup" component={Signup}/>
        <PrivateRoute path="/member-area" component={MemberHome} />
        <Route path="/featured-books/:id" component={FeaturedBook} />
+       <Footer />
      </div>
   );
   }

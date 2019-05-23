@@ -94,12 +94,12 @@ const reducer = (state = initialState, action) => {
                     return parseFloat(b.average) - parseFloat(a.average); 
                 })   
                 console.log("sorted books: ", sortedBooks)
-                let top4Books = [];
-                for(let i = 0; i < 4; i++) {
-                    top4Books.push(sortedBooks[i]);
+                let top6Books = [];
+                for(let i = 0; i < 6; i++) {
+                    top6Books.push(sortedBooks[i]);
                 }
         
-                console.log("top 4 books: " , top4Books)
+                console.log("top 6 books: " , top6Books)
             
 
 
@@ -107,7 +107,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 gettingBooks : false,
                 books : action.payload, 
-                topBooks : top4Books
+                topBooks : top6Books
             }
         case GETBOOKS_FAIL:
             console.log(action.payload)

@@ -5,6 +5,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import FeaturedBookDetail from './FeaturedBookDetail';
+import FeaturedBookSideInfo from './FeaturedBookSideInfo';
+import MemberForm from '../MemberForm';
 
 const styles = theme => ({
     root: {
@@ -26,12 +28,17 @@ class FeaturedBook extends React.Component {
         const { classes } = this.props;
 
         return (
-            <div className="container ">
+            <div className="container">
                 <Paper className={`${classes.root} bookpage_full`}elevation={1}>
                      <FeaturedBookDetail id={this.state.id} />
+                     <div className="bookpage_right_wrapper">
+                        <FeaturedBookSideInfo id={this.state.id} />
+                        <MemberForm />
+
+                     </div>
+
                 </Paper>
-            </div>
-           
+           </div>
         )
     }
 }

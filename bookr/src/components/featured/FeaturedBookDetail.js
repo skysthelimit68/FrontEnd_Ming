@@ -41,7 +41,7 @@ class FeaturedBookDetail extends React.Component {
         if(!this.props.activeBook.authors || !this.props.activeBook.reviews) return (<div>Book is loading...</div>)
         
         return (
-            <div>
+            <div className="bookpage_left_wrapper">
                 <div className="bookpage_img_wrapper">
                     <img src={this.props.activeBook.cover_url} />
                     <div className="star_rating">

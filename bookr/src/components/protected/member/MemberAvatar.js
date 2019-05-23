@@ -23,15 +23,22 @@ const styles = {
   },
 };
 
+
+
 const MemberAvatar = props => {
   const handleAvatar = event => {
     props.logout(event);
   }
   const { classes } = props;
   return (
+  
     <Grid container justify="center" alignItems="center" className="avatar-wrapper">
+      {props.type !== "review" ? 
+        <Avatar className={`${classes.blueAvatar} avatar-style`} onClick={handleAvatar}>{localStorage.getItem("username")[0].toUpperCase()}</Avatar>
+        :
+        <Avatar className={`${classes.orangeAvatar} avatar-style`} >{props.user[0].toUpperCase()}</Avatar>
+    }
       
-      <Avatar className={`${classes.blueAvatar} avatar-style`} onClick={handleAvatar}>{localStorage.getItem("username")[0].toUpperCase()}</Avatar>
     </Grid>
   );
 }
@@ -41,3 +48,12 @@ MemberAvatar.propTypes = {
 };
 
 export default withStyles(styles)(MemberAvatar);
+
+
+/*
+
+    <Grid container justify="center" alignItems="center" className="avatar-wrapper">
+    
+      <Avatar className={`${classes.blueAvatar} avatar-style`} onClick={handleAvatar}>{localStorage.getItem("username")[0].toUpperCase()}</Avatar>
+    </Grid>
+    */
