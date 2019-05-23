@@ -21,7 +21,7 @@ class FeaturedBookSideInfo extends React.Component {
      if(!this.props.activeBook.subjects) return <div>Loading Additional Book Info...</div>
         return ( 
             
-            <div>Testing side panel</div>
+            <div></div>
             
             /*
             <div>
