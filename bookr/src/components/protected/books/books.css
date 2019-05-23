@@ -67,6 +67,27 @@
 .right {
     float:right;
 }
+.additionalBooks_wrapper {
+    display:flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+}
+
+.additionalBooks_img_wrapper {
+    width: 48%;
+    max-height: 160px;
+    overflow: hidden;
+    border: 1px solid #00000030;
+    margin: 5px 0;
+    background:url("../../../temp_bkCover.png");
+    background-size:cover;    
+    background-position-x: center;
+
+}
+
+.additionalBooks_img_wrapper img {
+    width:100%;
+}
 
 .bookpage_desc_wrapper {
     

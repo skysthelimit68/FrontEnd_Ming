@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchBook } from "../../../actions";
 import BookSubjects from "./BookSubjects";
 import BookInfo from "./BookInfo";
+import AdditionalBooks from "./AdditionalBooks";
 
 class BookSideInfo extends React.Component {
     constructor(props) {
@@ -22,6 +23,8 @@ class BookSideInfo extends React.Component {
             <div className="bookpage_right_wrapper">
                 <BookSubjects subjects={this.props.activeBook.subjects} />
                 <BookInfo book={this.props.activeBook} />
+                <h2>Top Rated Books: </h2>
+                <AdditionalBooks />
             </div>
            /* <div className="bookpage_right_wrapper">
                 {this.props.activeBook.subjects.map( subject => <span>{subject.name}{' '}</span> )}
