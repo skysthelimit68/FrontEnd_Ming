@@ -30,11 +30,13 @@ const BookCard = props => {
         <Card className={`${classes.card} bookcard`}>
         <Link to={`/member-area/book/${props.book.id}`}>
             <CardActionArea>
+                <div className="cardMedia-wrapper">
                 <CardMedia
                 className={classes.media}
                 image={props.book.cover_url}
                 title={props.book.title}
                 />
+                </div>
                 <CardContent>
                 <Typography gutterBottom variant="h7" component="h3">
                     {props.book.title}

@@ -19,6 +19,12 @@
     font-size: 1.5rem;
 }
 
+.cardMedia-wrapper {
+    background: url(/static/media/temp_bkCover.cc318a40.png);
+    background-size: cover;
+    background-position-x: center;
+}
+
 .bookpage_full {
     width:100%;
     max-width:980px;
@@ -42,6 +48,9 @@
 .bookpage_img_wrapper img {
     width: 100%;
     box-shadow: 2px 2px 10px #00000080;
+    background:url("../../../temp_bkCover.png");
+    background-size:cover;
+
 }
 
 .bookpage_desc_wrapper {
