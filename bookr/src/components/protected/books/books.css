@@ -15,7 +15,7 @@
 }
 
 
-.bookcard .dv-star-rating {
+.dv-star-rating {
     font-size: 1.5rem;
 }
 
@@ -26,9 +26,19 @@
 }
 
 .bookpage_full {
-    width:100%;
-    max-width:980px;
+    width: 100%;
+    max-width: 980px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookpage_left_wrapper {
+    width:70%;
+}
+
+.bookpage_right_wrapper {
+    width:28%;
 }
 
 .bookpage_full .star_rating { 
@@ -53,10 +63,15 @@
 
 }
 
+.right {
+    float:right;
+}
+
 .bookpage_desc_wrapper {
+    
     display: inline-block;
-    max-width: 600px;
-    width: 100%;
+    max-width: 480px;
+    width: 70%;
     vertical-align: top;
     padding-top: 30px;
     margin-left: 50px;

@@ -42,7 +42,7 @@ class BookDetail extends React.Component {
         if(!this.props.activeBook.authors || !this.props.activeBook.reviews) return (<div>Book is loading...</div>)
         
         return (
-            <div>
+            <div className="bookpage_left_wrapper">
                 <div className="bookpage_img_wrapper">
                     <img src={this.props.activeBook.cover_url} />
                     <div className="star_rating">
@@ -52,6 +52,10 @@ class BookDetail extends React.Component {
                             //value={this.props.activeBook.stars.reduce((a,b) => a + b, 0) / this.props.activeBook.stars.length}
                             value={this.props.activeBook.average}
                         />
+                        
+                    </div>
+                    <div className="right">
+                        <ReviewForm id={this.state.id} fetchBookWithNewReview={this.fetchBookAfterReview}/>
                     </div>
                 </div> 
                 
@@ -59,17 +63,17 @@ class BookDetail extends React.Component {
                     <Typography variant="h5" component="h3">
                         {this.props.activeBook.title}
                     </Typography>
-                    <Typography variant="h5" component="h5">
-                        {this.props.activeBook.authors.map( author => <span key={author.name}> {author.name} {' '} </span>)}
+                    <Typography variant="h6" component="h5">
+                        by {' '} {this.props.activeBook.authors.map( author => <span key={author.name}> {author.name} {' '} </span>)}
                     </Typography>
+                    <span># of Reviews:{' '}{this.props.activeBook.reviews.length} {' '}</span>
+
                     <Typography component="p">
                         {this.props.activeBook.description}
                     </Typography>
                    
                 </div>
-                <div>
-                    <ReviewForm id={this.state.id} fetchBookWithNewReview={this.fetchBookAfterReview}/>
-                </div>
+                
                 <div className="bookpage_reviews_wrapper">
                     <BookReviews id={this.state.id}  />
                 </div>

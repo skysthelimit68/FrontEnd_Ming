@@ -27,12 +27,10 @@ class Book extends React.Component {
         const { classes } = this.props;
 
         return (
-            <div>
                 <Paper className={`${classes.root} bookpage_full`}elevation={1}>
                      <BookDetail id={this.state.id} />
-                     
+                    <div className="bookpage_right_wrapper">bookpage_right_wrapper</div>
                 </Paper>
-            </div>
            
         )
     }
