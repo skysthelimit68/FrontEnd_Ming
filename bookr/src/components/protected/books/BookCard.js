@@ -39,14 +39,15 @@ const BookCard = props => {
                 <Typography gutterBottom variant="h5" component="h2">
                     {props.book.title}
                 </Typography>
-                <Typography gutterBottom variant="h7" component="h3">
-                    by {props.book.author}
-                </Typography>
+                
                 <StarRatingComponent 
                     name="rate1" 
                     starCount={5}
                     value={props.book.average}
                 />
+
+
+
                 </CardContent>
             </CardActionArea>
             </Link>
@@ -62,6 +63,9 @@ BookCard.propTypes = {
 export default withStyles(styles)(BookCard);
 
 /* 
+<Typography gutterBottom variant="h7" component="h3">
+                    by {props.book.author}
+                </Typography>
 <Typography component="p">
     {props.book.shortDescription}
 </Typography>
@@ -77,3 +81,4 @@ export default withStyles(styles)(BookCard);
                 </Button>
             </CardActions>
 */
+

@@ -104,15 +104,16 @@ export const postReview = review => dispatch => {
     console.log("from postReview action", review)
     return (
         // axiosWithAuth().get(`http://localhost:5000/api/books/`)
-         axios
+         //axios
          //.post(`http://localhost:3500/api/reviews/`, review)
-         .post(`https://lambda-bookr.herokuapp.com/api/reviews/`, review)
+         //.post(`https://lambda-bookr.herokuapp.com/api/reviews/`, review)
+         axiosWithAuth().post(`https://lambda-bookr.herokuapp.com/api/reviews/`, review)
          .then( res => {
              console.log("post review res: ", res)
-             dispatch({ type : POSTREVIEW_SUCCESS, payload: res.data})
+             //dispatch({ type : POSTREVIEW_SUCCESS, payload: res.data})
          })
          .catch( err => {
-            dispatch({ type : POSTREVIEW_FAIL , payload : err})
+            //dispatch({ type : POSTREVIEW_FAIL , payload : err})
              console.log(err)
          })
      )
