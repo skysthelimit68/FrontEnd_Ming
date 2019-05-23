@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ReviewForm from './ReviewForm';
+import BookSideInfo from './BookSideInfo';
 
 const styles = theme => ({
     root: {
@@ -29,7 +30,7 @@ class Book extends React.Component {
         return (
                 <Paper className={`${classes.root} bookpage_full`}elevation={1}>
                      <BookDetail id={this.state.id} />
-                    <div className="bookpage_right_wrapper">bookpage_right_wrapper</div>
+                     <BookSideInfo id={this.state.id} />
                 </Paper>
            
         )
