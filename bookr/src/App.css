@@ -37,7 +37,7 @@
 }
 .container {
   width:1220px;
-  margin: 100px auto 0;
+  margin: 80px auto 0;
   padding:20px 0 0;
   
 }
@@ -46,7 +46,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 100px);
   flex-wrap: wrap;
 }
 
@@ -57,7 +57,7 @@ header {
   top: 0;
   z-index: 1;
   background: #078C54;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
 }
@@ -68,10 +68,11 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo-wrapper {
-  width:250px;
+  width:188px;
 }
 .logo-wrapper img {
   width:100%;

@@ -36,7 +36,7 @@ const BookCard = props => {
                 title={props.book.title}
                 />
                 <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h7" component="h3">
                     {props.book.title}
                 </Typography>
                 
