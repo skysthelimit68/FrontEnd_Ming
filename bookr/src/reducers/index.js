@@ -15,7 +15,8 @@ const initialState = {
     logginIn : false,
     gettingBooks : false,
     fetchingBook: false,
-    token : ""
+    token : "",
+    topBooks: []
 
 }
 
@@ -87,10 +88,26 @@ const reducer = (state = initialState, action) => {
             }
         case GETBOOKS_SUCCESS:
             console.log(action.payload)
+
+                const tempArray = action.payload;
+                const sortedBooks = tempArray.sort( (a,b) => {
+                    return parseFloat(b.average) - parseFloat(a.average); 
+                })   
+                console.log("sorted books: ", sortedBooks)
+                let top4Books = [];
+                for(let i = 0; i < 4; i++) {
+                    top4Books.push(sortedBooks[i]);
+                }
+        
+                console.log("top 4 books: " , top4Books)
+            
+
+
             return {
                 ...state,
                 gettingBooks : false,
-                books : action.payload
+                books : action.payload, 
+                topBooks : top4Books
             }
         case GETBOOKS_FAIL:
             console.log(action.payload)
