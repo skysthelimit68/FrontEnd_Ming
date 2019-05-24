@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import StarRatingComponent from 'react-star-rating-component';
 import BookReviews from './BookReviews';
 import ReviewForm from './ReviewForm';
+import BuyBookModal from './BuyBookModal';
 
 
 
@@ -72,6 +73,7 @@ class BookDetail extends React.Component {
                     <Typography component="p">
                         {this.props.activeBook.description}
                     </Typography>
+                    <BuyBookModal isbn={this.props.activeBook.isbn} />
                    
                 </div>
                 
