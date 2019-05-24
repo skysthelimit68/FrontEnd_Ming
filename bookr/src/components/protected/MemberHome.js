@@ -20,7 +20,7 @@ class MemberHome extends React.Component {
     render(){
         return(
             <div className="container memberHome">
-                <h1>You've reached a secured area</h1>
+               
                 
                 <Route 
                     exact
