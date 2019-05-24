@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchBook } from "../../actions";
 import BookSubjects from "../protected/books/BookSubjects";
 import BookInfo from "../protected/books/BookInfo";
+import MoreFeaturedBooks from "./MoreFeaturedBooks";
 
 class FeaturedBookSideInfo extends React.Component {
     constructor(props) {
@@ -22,10 +23,13 @@ class FeaturedBookSideInfo extends React.Component {
             
             
             
-            <div>
-                <BookSubjects subjects={this.props.activeBook.subjects} />
+            <div> 
                 <BookInfo book={this.props.activeBook} />
+                <BookSubjects subjects={this.props.activeBook.subjects} />
+               
                 <h2>Featured Books</h2>
+                <MoreFeaturedBooks />
+
             </div>
            
         )

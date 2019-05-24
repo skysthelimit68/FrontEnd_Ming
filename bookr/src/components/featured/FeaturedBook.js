@@ -44,14 +44,18 @@ class FeaturedBook extends React.Component {
     }
 
     render() {
-        if(!this.props.activeBook) return <div>Loading...</div>
         const { classes } = this.props;
-        if(this.props.activeBook && !this.props.activeBook.featured) return (
-              <div className="container"> 
-                <h2>You need to sing in to view this book</h2>
-              </div>
-        )        
-       
+        
+        if(!this.props.activeBook) return <div>Loading...</div>
+        
+        if(this.props.activeBook && !this.props.activeBook.featured) {
+            return (
+                <div className="container"> 
+                    <h2>You need to sing in to view this book</h2>
+                </div>
+            )
+        }
+
         return (
             <div className="container">
                 <Paper className={`${classes.root} bookpage_full`}elevation={1}>

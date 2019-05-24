@@ -40,6 +40,7 @@
 
 .bookpage_right_wrapper {
     width:28%;
+    color:#020207
 }
 
 .bookpage_full .star_rating { 
@@ -67,6 +68,20 @@
 .right {
     float:right;
 }
+
+.bookInfo-wrapper {
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    background: #00193350;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.info-bold {
+    font-weight:bold;
+}
+
 .additionalBooks_wrapper {
     display:flex;
     justify-content: space-between; 

@@ -1,50 +1,54 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getBooks } from "../../../actions";
+import { getBooks } from "../../actions";
 import { Link } from "react-router-dom";
 
-class AdditionalBooks extends React.Component {
+class MoreFeaturedBooks extends React.Component {
     constructor() {
         super();
         this.state= {
-            
+            featured : [1, 2, 4, 6]
         }
     }
 
     componentDidMount() {
-        this.props.getBooks();
+        this.props.getBooks()
+    }
+
+    getFeaturedBooks = () => {
+        return this.props.books.filter( book => this.state.featured.includes(book.id))
     }
 
     handleClick = event => {
         event.preventDefault();
         window.location.reload();
     }
-   
 
     render() {
-        if(this.props.topBooks.length <= 0) return <div>Loading Top Rated Books...</div>
-            return(
-                <div class="additionalBooks_wrapper" onClick={this.handleClick}>
-                    {this.props.topBooks.map(book => 
-                    <Link to={`/member-area/book/${book.id}`}>
+        const featuredBooks = this.getFeaturedBooks();
+        return(
+
+            <div class="additionalBooks_wrapper" onClick={this.handleClick}>
+                    {featuredBooks.map(book => 
+                    <Link to={`/featured-books/${book.id}`}>
                         <div className="additionalBooks_img_wrapper">
                             <img src={book.cover_url} />
                         </div>
                     </Link>)}
                 </div>
-            )
-        }
+        )
+    }
         
     
 }
 
 const mapStateToProps = state => ({
-    topBooks: state.topBooks
+    books: state.books
 })
 
 export default connect(
     mapStateToProps, 
     { getBooks }
-)(AdditionalBooks)
+)(MoreFeaturedBooks)
 
 
