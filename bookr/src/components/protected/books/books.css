@@ -123,6 +123,18 @@
     margin-left: 50px;
 }
 
+.divider {
+    width: 100%;
+    border-bottom: 1px solid #00000020;
+    padding-top: 15px;
+}
+
+.reviewCount {
+    font-size:0.8rem;
+    padding:5px 0;
+    margin:10px 0;
+}
+
 .bookpage_reviews_wrapper {
     width: 100%;
     vertical-align: top;

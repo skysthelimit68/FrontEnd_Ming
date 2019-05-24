@@ -63,10 +63,11 @@ class BookDetail extends React.Component {
                     <Typography variant="h5" component="h3">
                         {this.props.activeBook.title}
                     </Typography>
-                    <Typography variant="h6" component="h5">
+                    <Typography  component="h5" >
                         by {' '} {this.props.activeBook.authors.map( author => <span key={author.name}> {author.name} {' '} </span>)}
                     </Typography>
-                    <span># of Reviews:{' '}{this.props.activeBook.reviews.length} {' '}</span>
+                    <div className="divider"></div>
+                    <div className="reviewCount"><span className="info-bold"># of Reviews:</span>{' '}{this.props.activeBook.reviews.length} {' '}</div>
 
                     <Typography component="p">
                         {this.props.activeBook.description}

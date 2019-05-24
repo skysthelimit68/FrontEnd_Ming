@@ -10,6 +10,8 @@
     width:40%;
     background:#034c2e;
     height:100%;
+    color:white;
+    
 }
 
 .prompt_right {
@@ -23,6 +25,38 @@
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
+
+.prompt-wrap {
+     padding:80px 30px;
+     text-align:center;
+     
+     
+}
+
+.prompt-wrap:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+.prompt-wrap a {
+    text-decoration: none;
+    color:white;
+    border:white;
+}
+
+.prompt-wrap span {
+    color:white;
+}
+
+.prompt-wrap span:last-child {
+    border: 1px solid white;
+}
+
+.prompt_button {
+    color:white;
+    border:white;
+}
+
 
 .form_wrapper {
     width:55%;
@@ -61,6 +95,10 @@ form {
     display: flex;
     /* justify-content: space-around; */
     flex-wrap: wrap;
+}
+
+.form_left h1, .form_right h1 {
+    color:#034c2e;
 }
 
 form .form_input {
