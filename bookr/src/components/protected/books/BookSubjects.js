@@ -27,7 +27,7 @@ const BookSubjects = props => {
             {props.subjects.map(subject => 
             <Chip
                 label={subject.name}
-                className={classes.chip}
+                className={`${classes.chip} subject-chip`}
                 component="a"
                 href="#"
                 color="primary"

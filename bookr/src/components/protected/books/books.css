@@ -69,6 +69,10 @@
     float:right;
 }
 
+.subject-chip {
+    margin: 4px 8px !important;
+}
+
 .bookInfo-wrapper {
     padding: 5px 15px;
     font-size: 0.9rem;
@@ -123,6 +127,7 @@
     width: 100%;
     vertical-align: top;
     float: right;
+    margin-top: 30px;
 }
 
 .addReviewButton {
@@ -143,9 +148,8 @@
 
 .review_left {
     padding:10px;
-    width: 30%;
+    width: 10%;
     display: flex;
-    flex-direction: column;
     justify-content: flex-end;
     align-content: flex-start;
 }
@@ -154,6 +158,24 @@
     margin:0;
 }
 .review_right {
-    width: 62%;
+    width: 82%;
     padding: 10px;
+    margin-right: 20px;
+}
+
+.review_right p {
+        margin: 0; 
+        font-size:1.0rem;
+
+}
+
+.review_topRow {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.review_topRow p {
+    font-size:1.1rem;
+    font-weight:bold;
 }

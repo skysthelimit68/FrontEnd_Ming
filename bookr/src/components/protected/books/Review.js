@@ -9,13 +9,17 @@ const Review = props => {
                 <MemberAvatar username={props.review.username} type="review" user={props.review.username}/>
             </div>
             <div className="review_right">
-            <p>{props.review.username}</p> 
+            
+                <div className="review_topRow">
+                <p>{props.review.username}</p> 
             <StarRatingComponent 
                 name="stars" 
                 starCount={5}
                 value={props.review.rating}
             />
-                {props.review.comment ? props.review.comment : null } 
+            </div>
+            <p>{props.review.comment ? props.review.comment : null } </p>
+                
             </div>
         </div>
     )
