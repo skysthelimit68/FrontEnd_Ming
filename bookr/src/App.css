@@ -89,6 +89,7 @@ footer {
 }
 .fullpage_wrap {
   width:100%;
+  overflow: hidden;
 }
 
 .fullpage_prompt {
